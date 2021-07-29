@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Setup | Checkout
         uses: actions/checkout@v2
+      - run: rustup update stable
+        
         
         
       - name : Cache cargo registry
