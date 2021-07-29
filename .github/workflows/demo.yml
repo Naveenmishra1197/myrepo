@@ -1,0 +1,24 @@
+name : demo
+on : [ push ]
+
+   
+jobs: 
+    test :
+       name : running test
+       runs-on : ubuntu-latest
+       
+       steps:
+       - uses: action/checkout@v1
+       - name: use node.js ${{matrix.node-version}}
+         uses: action/setup-node@v1
+         with:
+            node-version : ${{matrix.node-version}}
+       - name: install
+         run : npm install
+       - name : test 
+         run : npm test
+         
+
+           
+        
+ 
